@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
-// const url = 'https://enchante-22-api.vercel.app';
+// const url = 'http://localhost:8000';
+const url = 'https://enchante-22-api.vercel.app';
 
 export const server = axios.create({
   baseURL: url,

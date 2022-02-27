@@ -5,15 +5,18 @@ import Admin from './pages/Admin';
 import Login from './pages/Login';
 import NavBar from './components/NavBar';
 import { useEffect } from 'react';
-
-function App() {  
+import { useSelector, useDispatch } from 'react-redux';
+function App() {
+  const user = useSelector((state) => state.auth);
   return (
     <div className="App">
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/admin" element={<Admin />} />
         <Route exact path="/login" element={<Login />} />
+        {user ? (
+          <Route exact path="/admin-dashboard" element={<Admin />} />
+        ) : null}
       </Routes>
     </div>
   );

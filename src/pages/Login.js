@@ -3,6 +3,10 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { Form, Button, Card } from 'react-bootstrap';
 import { login } from '../api';
 import { Alert } from '@material-ui/lab';
+import { useSelector, useDispatch } from 'react-redux';
+import { userAuth } from '../action';
+import { useNavigate } from 'react-router-dom';
+
 const useStyles = makeStyles(() => ({
   root: {
     minHeight: '94vh',
@@ -24,6 +28,9 @@ const useStyles = makeStyles(() => ({
 
 function Login() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.auth);
   const [formData, setformData] = useState({ username: '', password: '' });
   const [error, seterror] = useState({ show: false, text: '' });
   const handleLogin = async () => {
@@ -36,12 +43,14 @@ function Login() {
         const res = await login(formData);
         if (res.data.data.auth) {
           seterror({ show: false, text: '' });
-          console.log('in');
+          await dispatch(userAuth());
+          navigate('/admin-dashboard');
         } else {
           seterror({ show: true, text: 'Invalid Details' });
           return;
         }
       } catch (err) {
+        console.log(err);
         seterror({ show: true, text: 'Network Error' });
       }
     }
