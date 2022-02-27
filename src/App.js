@@ -4,13 +4,9 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import NavBar from './components/NavBar';
-import { getNotifications } from './api';
 import { useEffect } from 'react';
 
 function App() {  
-  useEffect(async () => {
-    await getNotifications();
-  }, []);
   return (
     <div className="App">
       <NavBar />

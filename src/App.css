@@ -1,11 +1,31 @@
 .App {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0b0c10;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff5c58;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -62,7 +62,7 @@ function NavBar() {
               className={`${
                 curr === 0 ? classes.navLinkActive : classes.navLink
               }`}
-              href="#features"
+              href="/home"
             >
               Home
             </Nav.Link>
@@ -80,7 +80,6 @@ function NavBar() {
               className={`${
                 curr === 2 ? classes.navLinkActive : classes.navLink
               }`}
-              href="#features"
             >
               Schedule
             </Nav.Link>
@@ -89,7 +88,6 @@ function NavBar() {
               className={`${
                 curr === 3 ? classes.navLinkActive : classes.navLink
               }`}
-              href="#pricing"
             >
               Contact Us
             </Nav.Link>
