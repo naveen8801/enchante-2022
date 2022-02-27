@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles(() => ({
   brand: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles(() => ({
   navLink: {
     fontFamily: 'Montserrat',
     fontWeight: 400,
+    textAlign: 'center',
     color: 'white!important',
     '&:hover': {
       color: '#95CD41!important',
@@ -32,6 +34,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   navLinkActive: {
+    textAlign: 'center',
     fontFamily: 'Montserrat',
     fontWeight: 500,
     color: '#95CD41!important',
@@ -47,7 +50,11 @@ function NavBar() {
         <Navbar.Brand href="./">
           <h3 className={classes.brand}>Enchante-22</h3>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav">
+          <span>
+            <MenuIcon style={{ color: 'white', fontSize: '35px' }} />
+          </span>
+        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link
