@@ -86,12 +86,12 @@ function NavBar() {
                   curr === 1 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/"
+                to="/notice"
               >
                 Notifications
               </Link>
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               onClick={() => setCurr(2)}
               className={`${
                 curr === 2 ? classes.navLinkActive : classes.navLink
@@ -106,7 +106,7 @@ function NavBar() {
               >
                 Schedule
               </Link>
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link
               onClick={() => setCurr(3)}
               className={`${

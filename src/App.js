@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactUs from './pages/ContactUs';
+import Notice from './pages/Notice';
 function App() {
   const user = useSelector((state) => state.auth);
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/contact" element={<ContactUs />} />
+        <Route exact path="/notice" element={<Notice />} />
         {user ? (
           <Route exact path="/admin-dashboard" element={<Admin />} />
         ) : null}
