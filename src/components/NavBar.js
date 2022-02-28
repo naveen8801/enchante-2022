@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   brand: {
@@ -62,18 +63,33 @@ function NavBar() {
               className={`${
                 curr === 0 ? classes.navLinkActive : classes.navLink
               }`}
-              href="/home"
             >
-              Home
+              <Link
+                className={`${
+                  curr === 0 ? classes.navLinkActive : classes.navLink
+                }`}
+                style={{ textDecoration: 'none' }}
+                to="/"
+              >
+                Home
+              </Link>
             </Nav.Link>
+
             <Nav.Link
               onClick={() => setCurr(1)}
               className={`${
                 curr === 1 ? classes.navLinkActive : classes.navLink
               }`}
-              href="#features"
             >
-              Notifications
+              <Link
+                className={`${
+                  curr === 1 ? classes.navLinkActive : classes.navLink
+                }`}
+                style={{ textDecoration: 'none' }}
+                to="/"
+              >
+                Notifications
+              </Link>
             </Nav.Link>
             <Nav.Link
               onClick={() => setCurr(2)}
@@ -81,7 +97,15 @@ function NavBar() {
                 curr === 2 ? classes.navLinkActive : classes.navLink
               }`}
             >
-              Schedule
+              <Link
+                className={`${
+                  curr === 2 ? classes.navLinkActive : classes.navLink
+                }`}
+                style={{ textDecoration: 'none' }}
+                to="/"
+              >
+                Schedule
+              </Link>
             </Nav.Link>
             <Nav.Link
               onClick={() => setCurr(3)}
@@ -89,7 +113,15 @@ function NavBar() {
                 curr === 3 ? classes.navLinkActive : classes.navLink
               }`}
             >
-              Contact Us
+              <Link
+                className={`${
+                  curr === 3 ? classes.navLinkActive : classes.navLink
+                }`}
+                style={{ textDecoration: 'none' }}
+                to="/contact"
+              >
+                Contact Us
+              </Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

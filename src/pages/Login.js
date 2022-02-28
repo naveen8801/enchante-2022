@@ -24,6 +24,10 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     marginBottom: '2rem',
   },
+  btn: {
+    backgroundColor: '#78B64D!important',
+    borderColor: '#78B64D!important',
+  },
 }));
 
 function Login() {
@@ -85,7 +89,12 @@ function Login() {
               }}
             />
           </Form.Group>
-          <Button variant="primary" type="button" onClick={() => handleLogin()}>
+          <Button
+            className={classes.btn}
+            variant="primary"
+            type="button"
+            onClick={() => handleLogin()}
+          >
             Submit
           </Button>
         </Form>
