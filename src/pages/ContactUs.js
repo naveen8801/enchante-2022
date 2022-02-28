@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography, Card } from '@material-ui/core';
 import { Form, Button } from 'react-bootstrap';
 import { Alert } from '@material-ui/lab';
+import { contact } from '../api';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -33,10 +34,12 @@ function ContactUs() {
     message: '',
   });
   const [error, seterror] = useState({ show: false, text: '' });
+  const [success, setsuccess] = useState({ show: false, text: '' });
   const classes = useStyles();
 
   const handleOnClick = async () => {
     seterror({ show: false, text: '' });
+    setsuccess({ show: false, text: '' });
     if (
       formData.email.trim() === '' ||
       formData.name.trim() === '' ||
@@ -46,13 +49,15 @@ function ContactUs() {
       return;
     } else {
       try {
-        // const res = await contact(formData);
-        // if (res.data.data.auth) {
-        //   seterror({ show: false, text: '' });
-        // } else {
-        //   seterror({ show: true, text: 'Invalid Details' });
-        //   return;
-        // }
+        const res = await contact(formData);
+        if (res.data.msg) {
+          setsuccess({ show: true, text: res.data.msg });
+          setformData({
+            email: '',
+            name: '',
+            message: '',
+          });
+        }
       } catch (err) {
         console.log(err);
         seterror({ show: true, text: 'Network Error' });
@@ -70,6 +75,9 @@ function ContactUs() {
       </Typography>
       <Card style={{ width: '50%' }} style={{ padding: '2rem' }}>
         <Form>
+          {success.show ? (
+            <Alert severity="success">{success.text}</Alert>
+          ) : null}
           {error.show ? <Alert severity="error">{error.text}</Alert> : null}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
