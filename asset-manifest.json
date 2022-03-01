@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/enchante-2022/static/css/main.f998e75a.css",
+    "main.js": "/enchante-2022/static/js/main.b135e8cc.js",
+    "static/js/787.f998504d.chunk.js": "/enchante-2022/static/js/787.f998504d.chunk.js",
+    "index.html": "/enchante-2022/index.html",
+    "main.f998e75a.css.map": "/enchante-2022/static/css/main.f998e75a.css.map",
+    "main.b135e8cc.js.map": "/enchante-2022/static/js/main.b135e8cc.js.map",
+    "787.f998504d.chunk.js.map": "/enchante-2022/static/js/787.f998504d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f998e75a.css",
+    "static/js/main.b135e8cc.js"
+  ]
+}
