@@ -35,9 +35,12 @@ function ContactUs() {
   });
   const [error, seterror] = useState({ show: false, text: '' });
   const [success, setsuccess] = useState({ show: false, text: '' });
+  const [loading, setloading] = useState(false);
+
   const classes = useStyles();
 
   const handleOnClick = async () => {
+    setloading(true);
     seterror({ show: false, text: '' });
     setsuccess({ show: false, text: '' });
     if (
@@ -63,6 +66,7 @@ function ContactUs() {
         seterror({ show: true, text: 'Network Error' });
       }
     }
+    setloading(false);
   };
   return (
     <div className={classes.root}>
@@ -119,6 +123,7 @@ function ContactUs() {
             variant="primary"
             type="button"
             onClick={() => handleOnClick()}
+            disabled={loading}
           >
             Submit
           </Button>

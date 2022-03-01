@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography, CircularProgress } from '@material-ui/core';
 import { getNotifications } from '../api';
 import { Table, thead, tr, th, Card } from 'react-bootstrap';
 import moment from 'moment';
@@ -14,7 +14,6 @@ const useStyles = makeStyles(() => ({
     marginTop: '3rem',
     height: '100%',
     position: 'relative',
-    
   },
   NoticeHeading: {
     fontFamily: 'Montserrat',
@@ -36,10 +35,12 @@ function Notice() {
   const classes = useStyles();
   const [notifications, setNotifications] = useState([]);
   const [rows, setRows] = useState([]);
+  const [loading, setloading] = useState(false);
   useEffect(() => {
     getNotice();
   }, []);
   const getNotice = async () => {
+    setloading(true);
     try {
       const res = await getNotifications();
       if (res.data.data) {
@@ -53,7 +54,10 @@ function Notice() {
         }
         setNotifications(tmp);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
+    setloading(false);
   };
 
   return (
@@ -61,30 +65,34 @@ function Notice() {
       <Typography className={classes.NoticeHeading} align="center" variant="h4">
         Latest Updates
       </Typography>
-      <Card className={classes.card} style={{ padding: '1rem' }}>
-        <Table responsive size="lg" bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Date & Time</th>
-              <th>Title</th>
-              <th>Update</th>
-            </tr>
-          </thead>
-          <tbody>
-            {notifications.length > 0
-              ? notifications.map((i, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{i.createdAt}</td>
-                    <td>{i.title}</td>
-                    <td>{i.description}</td>
-                  </tr>
-                ))
-              : 'NO DATA TO SHOW'}
-          </tbody>
-        </Table>
-      </Card>
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <Card className={classes.card} style={{ padding: '1rem' }}>
+          <Table responsive size="lg" bordered hover>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Date & Time</th>
+                <th>Title</th>
+                <th>Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              {notifications.length > 0
+                ? notifications.map((i, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{i.createdAt}</td>
+                      <td>{i.title}</td>
+                      <td>{i.description}</td>
+                    </tr>
+                  ))
+                : 'NO DATA TO SHOW'}
+            </tbody>
+          </Table>
+        </Card>
+      )}
     </div>
   );
 }

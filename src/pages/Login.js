@@ -37,7 +37,9 @@ function Login() {
   const user = useSelector((state) => state.auth);
   const [formData, setformData] = useState({ username: '', password: '' });
   const [error, seterror] = useState({ show: false, text: '' });
+  const [loading, setloading] = useState(false);
   const handleLogin = async () => {
+    setloading(true);
     seterror({ show: false, text: '' });
     if (formData.username.trim() === '' || formData.password.trim() === '') {
       seterror({ show: true, text: 'Fields can not be empty' });
@@ -58,6 +60,7 @@ function Login() {
         seterror({ show: true, text: 'Network Error' });
       }
     }
+    setloading(false);
   };
   return (
     <div className={classes.root}>
@@ -94,6 +97,7 @@ function Login() {
             variant="primary"
             type="button"
             onClick={() => handleLogin()}
+            disabled={loading}
           >
             Submit
           </Button>
