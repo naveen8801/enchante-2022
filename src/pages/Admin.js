@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, Typography, CircularProgress } from '@material-ui/core';
-import { getNotifications } from '../api';
+import {
+  makeStyles,
+  Typography,
+  CircularProgress,
+  FormControl,
+  Checkbox,
+  FormControlLabel,
+} from '@material-ui/core';
+import { PostNotifications, getNotifications, deleteNotice } from '../api';
 import { Table, thead, tr, th, Card, Button } from 'react-bootstrap';
 import moment from 'moment';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,6 +17,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Form } from 'react-bootstrap';
 import { Alert } from '@material-ui/lab';
+import { useSelector, useDispatch } from 'react-redux';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -42,6 +50,7 @@ const useStyles = makeStyles(() => ({
 
 function Admin() {
   const classes = useStyles();
+  const user = useSelector((state) => state.auth);
   const [notifications, setNotifications] = useState([]);
   const [rows, setRows] = useState([]);
   const [loading, setloading] = useState(false);
@@ -65,13 +74,17 @@ function Admin() {
       const res = await getNotifications();
       if (res.data.data) {
         let tmp = [];
+        let tmpDel = [];
         for (let i = 0; i < res.data.data.length; i++) {
           let obj = res.data.data[i];
           obj.createdAt = moment(res.data.data[i].createdAt).format(
             'DD MMMM YYYY hh:mm:ss'
           );
+          // tmpDel.push(false);
           tmp.push(obj);
         }
+        tmp.reverse();
+        // setdeleteIds(tmpDel);
         setNotifications(tmp);
       }
     } catch (error) {
@@ -89,17 +102,20 @@ function Admin() {
       addNoticeData.description.trim() === ''
     ) {
       seterror({ show: true, text: 'Fields can not be empty' });
+      setloading(false);
       return;
     } else {
       try {
-        // const res = await contact(formData);
-        // if (res.data.msg) {
-        //   setsuccess({ show: true, text: res.data.msg });
-        //   setAddNoticeData({
-        //     title: '',
-        //     description: '',
-        //   });
-        // }
+        const res = await PostNotifications(addNoticeData);
+        if (res.data.msg) {
+          setsuccess({ show: true, text: res.data.msg });
+          setAddNoticeData({
+            title: '',
+            description: '',
+          });
+          getNotice();
+          setAddDialog(false);
+        }
       } catch (err) {
         console.log(err);
         seterror({ show: true, text: 'Network Error' });
@@ -107,7 +123,23 @@ function Admin() {
     }
     setloading(false);
   };
+  console.log(deleteIds);
 
+  const handleDelete = async () => {
+    if (deleteIds.length <= 0) {
+      return;
+    } else {
+      try {
+        const res = await deleteNotice({ id: deleteIds });
+        if (res.data.msg) {
+          console.log(res.data.msg);
+          getNotice();
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
   return (
     <div className={classes.root}>
       <Typography className={classes.NoticeHeading} align="center" variant="h4">
@@ -124,6 +156,7 @@ function Admin() {
                 <th>Date & Time</th>
                 <th>Title</th>
                 <th>Update</th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
@@ -134,6 +167,31 @@ function Admin() {
                       <td>{i.createdAt}</td>
                       <td>{i.title}</td>
                       <td>{i.description}</td>
+                      <td>
+                        <FormControl margin="normal" size="medium">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={deleteIds.indexOf(i._id) > -1}
+                                onChange={(e) => {
+                                  const tmp = [...deleteIds];
+                                  if (e.target.checked) {
+                                    tmp.push(i._id);
+                                    setdeleteIds(tmp);
+                                  } else {
+                                    const index = tmp.indexOf(i._id);
+                                    if (index > -1) {
+                                      tmp.splice(index, 1); // 2nd parameter means remove one item only
+                                      setdeleteIds(tmp);
+                                    }
+                                  }
+                                }}
+                              />
+                            }
+                            label="Delete"
+                          />
+                        </FormControl>
+                      </td>
                     </tr>
                   ))
                 : 'NO DATA TO SHOW'}
@@ -144,7 +202,11 @@ function Admin() {
               className={classes.btn}
               variant="primary"
               type="button"
-              onClick={() => setAddDialog(true)}
+              onClick={() => {
+                seterror({ show: false, text: '' });
+                setsuccess({ show: false, text: '' });
+                setAddDialog(true);
+              }}
               disabled={loading}
             >
               Add
@@ -153,8 +215,8 @@ function Admin() {
               className={classes.btn}
               variant="primary"
               type="button"
-              // onClick={() => handleLogin()}
-              disabled={loading}
+              onClick={() => handleDelete()}
+              disabled={loading || deleteIds.length === 0}
             >
               Delete
             </Button>
@@ -175,7 +237,6 @@ function Admin() {
             ) : null}
             {error.show ? <Alert severity="error">{error.text}</Alert> : null}
             <Form>
-              {error.show ? <Alert severity="error">{error.text}</Alert> : null}
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Title</Form.Label>
                 <Form.Control
@@ -211,6 +272,7 @@ function Admin() {
         </DialogContent>
         <DialogActions>
           <Button
+            disabled={loading}
             onClick={() => handleAddNotice()}
             className={classes.btn}
             color="primary"

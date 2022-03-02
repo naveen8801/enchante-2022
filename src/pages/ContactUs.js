@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
     fontSize: '17px',
     width: ' 100%',
     textAlign: 'center',
-    fontWeight:'300',
+    fontWeight: '300',
   },
 }));
 
@@ -57,6 +57,7 @@ function ContactUs() {
       formData.message.trim() === ''
     ) {
       seterror({ show: true, text: 'Fields can not be empty' });
+      setloading(false);
       return;
     } else {
       try {
