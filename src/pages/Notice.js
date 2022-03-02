@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 600,
     color: 'white',
     marginBottom: '2rem',
+    marginTop: '3rem',
   },
   btn: {
     backgroundColor: '#78B64D!important',
@@ -48,7 +49,7 @@ function Notice() {
         for (let i = 0; i < res.data.data.length; i++) {
           let obj = res.data.data[i];
           obj.createdAt = moment(res.data.data[i].createdAt).format(
-            'DD MMMM YYYY hh:mm:ss'
+            'DD MMMM YYYY HH:MM:SS'
           );
           tmp.push(obj);
         }
@@ -80,14 +81,20 @@ function Notice() {
             </thead>
             <tbody>
               {notifications.length > 0
-                ? notifications.map((i, index) => (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{i.createdAt}</td>
-                      <td>{i.title}</td>
-                      <td>{i.description}</td>
-                    </tr>
-                  ))
+                ? notifications
+                    .sort(function (a, b) {
+                      // Turn your strings into dates, and then subtract them
+                      // to get a value that is either negative, positive, or zero.
+                      return new Date(b.createdAt) - new Date(a.createdAt);
+                    })
+                    .map((i, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{i.createdAt}</td>
+                        <td>{i.title}</td>
+                        <td>{i.description}</td>
+                      </tr>
+                    ))
                 : 'NO DATA TO SHOW'}
             </tbody>
           </Table>

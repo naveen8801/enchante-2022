@@ -35,6 +35,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 600,
     color: 'white',
     marginBottom: '2rem',
+    marginTop: '5rem',
   },
   btn: {
     marginLeft: '0.5rem',
@@ -78,7 +79,7 @@ function Admin() {
         for (let i = 0; i < res.data.data.length; i++) {
           let obj = res.data.data[i];
           obj.createdAt = moment(res.data.data[i].createdAt).format(
-            'DD MMMM YYYY hh:mm:ss'
+            'DD MMMM YYYY HH:MM:SS'
           );
           // tmpDel.push(false);
           tmp.push(obj);
@@ -161,39 +162,43 @@ function Admin() {
             </thead>
             <tbody>
               {notifications.length > 0
-                ? notifications.map((i, index) => (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{i.createdAt}</td>
-                      <td>{i.title}</td>
-                      <td>{i.description}</td>
-                      <td>
-                        <FormControl margin="normal" size="medium">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={deleteIds.indexOf(i._id) > -1}
-                                onChange={(e) => {
-                                  const tmp = [...deleteIds];
-                                  if (e.target.checked) {
-                                    tmp.push(i._id);
-                                    setdeleteIds(tmp);
-                                  } else {
-                                    const index = tmp.indexOf(i._id);
-                                    if (index > -1) {
-                                      tmp.splice(index, 1); // 2nd parameter means remove one item only
+                ? notifications
+                    .sort(function (a, b) {
+                      return new Date(b.createdAt) - new Date(a.createdAt);
+                    })
+                    .map((i, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{i.createdAt}</td>
+                        <td>{i.title}</td>
+                        <td>{i.description}</td>
+                        <td>
+                          <FormControl margin="normal" size="medium">
+                            <FormControlLabel
+                              control={
+                                <Checkbox
+                                  checked={deleteIds.indexOf(i._id) > -1}
+                                  onChange={(e) => {
+                                    const tmp = [...deleteIds];
+                                    if (e.target.checked) {
+                                      tmp.push(i._id);
                                       setdeleteIds(tmp);
+                                    } else {
+                                      const index = tmp.indexOf(i._id);
+                                      if (index > -1) {
+                                        tmp.splice(index, 1); // 2nd parameter means remove one item only
+                                        setdeleteIds(tmp);
+                                      }
                                     }
-                                  }
-                                }}
-                              />
-                            }
-                            label="Delete"
-                          />
-                        </FormControl>
-                      </td>
-                    </tr>
-                  ))
+                                  }}
+                                />
+                              }
+                              label="Delete"
+                            />
+                          </FormControl>
+                        </td>
+                      </tr>
+                    ))
                 : 'NO DATA TO SHOW'}
             </tbody>
           </Table>
