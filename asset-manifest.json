@@ -1,15 +1,21 @@
 {
   "files": {
     "main.css": "/enchante-2022/static/css/main.f998e75a.css",
-    "main.js": "/enchante-2022/static/js/main.829091c1.js",
+    "main.js": "/enchante-2022/static/js/main.5513c4a1.js",
     "static/js/787.f998504d.chunk.js": "/enchante-2022/static/js/787.f998504d.chunk.js",
+    "static/media/6.JPG": "/enchante-2022/static/media/6.9c128d009a0ea794f8f2.JPG",
+    "static/media/4.JPG": "/enchante-2022/static/media/4.38721c16e2ced1f4a63c.JPG",
+    "static/media/3.JPG": "/enchante-2022/static/media/3.c2f0deb1d20e7f7739d0.JPG",
+    "static/media/1.JPG": "/enchante-2022/static/media/1.a5ba016bddbb91274abc.JPG",
+    "static/media/5.JPG": "/enchante-2022/static/media/5.92437d7b0896ec653c80.JPG",
+    "static/media/2.JPG": "/enchante-2022/static/media/2.802e5e8eef6495db18be.JPG",
     "index.html": "/enchante-2022/index.html",
     "main.f998e75a.css.map": "/enchante-2022/static/css/main.f998e75a.css.map",
-    "main.829091c1.js.map": "/enchante-2022/static/js/main.829091c1.js.map",
+    "main.5513c4a1.js.map": "/enchante-2022/static/js/main.5513c4a1.js.map",
     "787.f998504d.chunk.js.map": "/enchante-2022/static/js/787.f998504d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f998e75a.css",
-    "static/js/main.829091c1.js"
+    "static/js/main.5513c4a1.js"
   ]
 }
