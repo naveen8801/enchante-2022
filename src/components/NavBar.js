@@ -85,7 +85,7 @@ function NavBar() {
                   curr === 1 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/"
+                to="/schedule"
               >
                 Schedule
               </Link>
@@ -117,7 +117,7 @@ function NavBar() {
                   curr === 3 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/"
+                to="/register"
               >
                 Register
               </Link>

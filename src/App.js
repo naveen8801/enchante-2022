@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactUs from './pages/ContactUs';
 import Notice from './pages/Notice';
+import Register from './pages/Register';
+import Schedule from './pages/Schedule';
 function App() {
   const user = useSelector((state) => state.auth);
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/contact" element={<ContactUs />} />
         <Route exact path="/notice" element={<Notice />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/schedule" element={<Schedule />} />
         {user ? (
           <Route exact path="/admin-dashboard" element={<Admin />} />
         ) : null}

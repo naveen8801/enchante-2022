@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
     color: '#FF5959',
     position: 'relative',
     padding: '0.3rem',
-    fontSize: '5.5rem!important',
+    fontSize: '7.5vw!important',
     '&::after': {
       content: '" "',
       width: '160px',
@@ -48,10 +48,10 @@ const useStyles = makeStyles(() => ({
     color: '#95CD41',
   },
   subText: {
-    // marginBottom: '2rem',
+    margin : 0,
     color: 'white',
     fontFamily: 'Montserrat',
-    fontSize: '28px',
+    fontSize: '2vw',
     width: ' 100%',
     textAlign: 'center',
     fontWeight: '500',
@@ -93,10 +93,17 @@ function Home() {
             loop
             typeSpeed={120}
             deleteSpeed={40}
-            delaySpeed={2500}
-          />{' '}
+            delaySpeed={4000}
+          />
           <span className={classes.span}>2022</span>
         </Typography>
+        <p
+          style={{ fontWeight: 400, marginTop: '2vw' }}
+          className={classes.subText}
+        >
+          Seth Jai Parkash Mukand Lal Institute of Engineering and Technology,
+          Radur
+        </p>
       </div>
       <div className={classes.gradient}></div>
       <div className={classes.carousel}>
@@ -130,14 +137,6 @@ function Home() {
               className="w-100"
               src={i1}
               alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{ width: '100%', height: '100vh' }}
-              className="w-100"
-              src={i2}
-              alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
