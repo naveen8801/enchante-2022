@@ -1,5 +1,5 @@
 {
-  "homepage": "https://naveen8801.github.io/enchante-2022/",
+  "homepage": "http://enchante-2022.live",
   "name": "enchante-22",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +23,7 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-simple-typewriter": "^3.0.1",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"

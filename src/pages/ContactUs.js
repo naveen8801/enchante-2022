@@ -25,6 +25,14 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#78B64D!important',
     borderColor: '#78B64D!important',
   },
+  subText: {
+    color: 'white',
+    fontFamily: 'Montserrat',
+    fontSize: '17px',
+    width: ' 100%',
+    textAlign: 'center',
+    fontWeight:'300',
+  },
 }));
 
 function ContactUs() {
@@ -77,6 +85,9 @@ function ContactUs() {
       >
         For Queries
       </Typography>
+      <p className={classes.subText}>
+        Send us your query or feedback, we will take care of it.
+      </p>
       <Card style={{ width: '50%' }} style={{ padding: '2rem' }}>
         <Form>
           {success.show ? (

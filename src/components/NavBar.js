@@ -74,7 +74,6 @@ function NavBar() {
                 Home
               </Link>
             </Nav.Link>
-
             <Nav.Link
               onClick={() => setCurr(1)}
               className={`${
@@ -86,12 +85,12 @@ function NavBar() {
                   curr === 1 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/notice"
+                to="/"
               >
-                Notifications
+                Schedule
               </Link>
             </Nav.Link>
-            {/* <Nav.Link
+            <Nav.Link
               onClick={() => setCurr(2)}
               className={`${
                 curr === 2 ? classes.navLinkActive : classes.navLink
@@ -102,11 +101,11 @@ function NavBar() {
                   curr === 2 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/"
+                to="/notice"
               >
-                Schedule
+                Notifications
               </Link>
-            </Nav.Link> */}
+            </Nav.Link>
             <Nav.Link
               onClick={() => setCurr(3)}
               className={`${
@@ -116,6 +115,22 @@ function NavBar() {
               <Link
                 className={`${
                   curr === 3 ? classes.navLinkActive : classes.navLink
+                }`}
+                style={{ textDecoration: 'none' }}
+                to="/"
+              >
+                Register
+              </Link>
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => setCurr(4)}
+              className={`${
+                curr === 4 ? classes.navLinkActive : classes.navLink
+              }`}
+            >
+              <Link
+                className={`${
+                  curr === 4 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
                 to="/contact"
