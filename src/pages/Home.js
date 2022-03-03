@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles, Typography, Card } from '@material-ui/core';
 import { Carousel } from 'react-bootstrap';
-import i1 from './../assets/1.JPG';
-import i2 from './../assets/2.JPG';
-import i3 from './../assets/3.JPG';
-import i4 from './../assets/4.JPG';
-import i5 from './../assets/5.JPG';
-import i6 from './../assets/6.JPG';
+import i1 from './../assets/1-new.jpg';
+import i2 from './../assets/2-new.jpg';
+import i3 from './../assets/3-new.jpg';
+import i4 from './../assets/4-new.jpg';
+import i5 from './../assets/5-new.jpg';
+import i6 from './../assets/6-new.jpg';
 import { Typewriter } from 'react-simple-typewriter';
 
 const useStyles = makeStyles(() => ({
@@ -89,20 +89,20 @@ function Home() {
         <p className={classes.subText}>Welcome</p>
         <Typography variant="h1" className={classes.heading}>
           <Typewriter
-            words={['Enchante ']}
+            words={['Enchanté ']}
             loop
             typeSpeed={120}
             deleteSpeed={40}
             delaySpeed={4000}
           />
-          <span className={classes.span}>2022</span>
+          <span className={classes.span}>2k22</span>
         </Typography>
         <p
           style={{ fontWeight: 400, marginTop: '2vw' }}
           className={classes.subText}
         >
           Seth Jai Parkash Mukand Lal Institute of Engineering and Technology,
-          Radur
+          Radaur
         </p>
       </div>
       <div className={classes.gradient}></div>
@@ -157,9 +157,9 @@ function Home() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className={classes.footer}>
+      {/* <div className={classes.footer}>
         <Typography> © 2020 Copyright: Enchante 2022</Typography>
-      </div>
+      </div> */}
     </div>
   );
 }

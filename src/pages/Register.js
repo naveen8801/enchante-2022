@@ -1,5 +1,4 @@
 import React from 'react';
-import underConst from './../assets/OE60SH0.jpg';
 import {
   makeStyles,
   Typography,
@@ -59,13 +58,12 @@ const useStyles = makeStyles(() => ({
     color: '#95CD41',
   },
   subText: {
-    // marginBottom: '2rem',
     color: 'white',
     fontFamily: 'Montserrat',
-    fontSize: '28px',
+    fontSize: '17px',
     width: ' 100%',
     textAlign: 'center',
-    fontWeight: '500',
+    fontWeight: '300',
   },
   carousel: {
     position: 'absolute',
@@ -107,6 +105,9 @@ function Register() {
       <Typography variant="h3" className={classes.RegisterationHeading}>
         Register
       </Typography>
+      <p className={classes.subText}>
+        * Please register with your college email IDs
+      </p>
       <Card className={classes.content}>
         <ul style={{ listStyle: 'none' }}>
           {data.map((item, index) => (

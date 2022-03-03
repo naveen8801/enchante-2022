@@ -49,7 +49,7 @@ function NavBar() {
     <Navbar fixed="top" collapseOnSelect bg="black" expand="lg">
       <Container>
         <Navbar.Brand href="./">
-          <h3 className={classes.brand}>Enchante-22</h3>
+          <h3 className={classes.brand}>Enchanté-2k22</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           <span>

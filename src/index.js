@@ -13,7 +13,7 @@ import { createStore } from 'redux';
 const store = createStore(reducer);
 
 ReactDOM.render(
-  <BrowserRouter >
+  <BrowserRouter>
     <Provider store={store}>
       <React.StrictMode>
         <App />
