@@ -7,6 +7,14 @@ import {
   Button,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
+
+import i1 from './../assets/rules/1.png';
+import i2 from './../assets/rules/2.png';
+import i3 from './../assets/rules/3.png';
+import i4 from './../assets/rules/4.png';
+import i5 from './../assets/rules/5.png';
+import i6 from './../assets/rules/6.png';
 
 const data = [
   {
@@ -66,11 +74,11 @@ const useStyles = makeStyles(() => ({
     fontWeight: '300',
   },
   carousel: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '90vh',
+    width: '80%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '4rem',
   },
   gradient: {
     position: 'absolute',
@@ -95,6 +103,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 600,
     color: 'white',
     marginBottom: '2rem',
+    marginTop: '6rem',
   },
 }));
 
@@ -132,6 +141,60 @@ function Register() {
           ))}
         </ul>
       </Card>
+      <Typography variant="h3" className={classes.RegisterationHeading}>
+        Rules
+      </Typography>
+      <div className={classes.carousel}>
+        <Carousel
+          indicators={false}
+          // prevIcon={false}
+          // nextIcon={false}
+          indicatorLabels={false}
+          interval={3500}
+          style={{ height: '60vh' }}
+        >
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '60vh' }}
+              className="w-100"
+              src={i5}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '60vh' }}
+              className="w-100"
+              src={i3}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '60vh' }}
+              className="w-100"
+              src={i1}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '60vh' }}
+              className="d-block w-100"
+              src={i4}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '60vh' }}
+              className="w-100"
+              src={i6}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+      </div>
     </div>
   );
 }
