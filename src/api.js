@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // const url = 'http://localhost:8000';
-const url = 'https://enchante-22-api.vercel.app';
+// const url = 'https://enchante-22-api.vercel.app';
+const url = 'https://enchante-2022.herokuapp.com';
 
 export const server = axios.create({
   baseURL: url,
