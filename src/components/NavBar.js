@@ -3,6 +3,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
+import logo from '../assets/jmit.png';
 
 const useStyles = makeStyles(() => ({
   brand: {
@@ -48,7 +49,15 @@ function NavBar() {
   return (
     <Navbar fixed="top" collapseOnSelect bg="black" expand="lg">
       <Container>
-        <Navbar.Brand href="./">
+        <Navbar.Brand
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+          }}
+          href="./"
+        >
+          <img style={{ width: '100px', height: '35px' }} src={logo} />
           <h3 className={classes.brand}>Enchanté-2k22</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
