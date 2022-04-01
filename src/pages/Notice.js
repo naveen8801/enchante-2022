@@ -6,7 +6,7 @@ import moment from 'moment';
 
 const useStyles = makeStyles(() => ({
   root: {
-    minHeight: '94vh',
+    height: '80vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -27,8 +27,10 @@ const useStyles = makeStyles(() => ({
     borderColor: '#78B64D!important',
   },
   card: {
+    height: '70vh',
     width: '80%',
     textAlign: 'center',
+    overflow: 'auto',
   },
 }));
 
