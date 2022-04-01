@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography, Card } from '@material-ui/core';
 import { Carousel } from 'react-bootstrap';
 import i1 from './../assets/1-new.jpg';
@@ -48,7 +48,7 @@ const useStyles = makeStyles(() => ({
     color: '#95CD41',
   },
   subText: {
-    margin : 0,
+    margin: 0,
     color: 'white',
     fontFamily: 'Montserrat',
     fontSize: '2vw',
@@ -82,30 +82,37 @@ const useStyles = makeStyles(() => ({
 
 function Home() {
   const classes = useStyles();
-
+  const [show, setshow] = useState(true);
+  useEffect(() => {
+    setInterval(() => {
+      setshow((show) => (show = false));
+    }, 8000);
+  }, []);
   return (
     <div className={classes.root}>
-      <div className={classes.content}>
-        <p className={classes.subText}>Welcome</p>
-        <Typography variant="h1" className={classes.heading}>
-          <Typewriter
-            words={['Enchanté ']}
-            loop
-            typeSpeed={120}
-            deleteSpeed={40}
-            delaySpeed={4000}
-          />
-          <span className={classes.span}>2k22</span>
-        </Typography>
-        <p
-          style={{ fontWeight: 400, marginTop: '2vw' }}
-          className={classes.subText}
-        >
-          Seth Jai Parkash Mukand Lal Institute of Engineering and Technology,
-          Radaur
-        </p>
-      </div>
-      <div className={classes.gradient}></div>
+      {show ? (
+        <div className={classes.content}>
+          <p className={classes.subText}>Welcome</p>
+          <Typography variant="h1" className={classes.heading}>
+            <Typewriter
+              words={['Enchanté ']}
+              loop
+              typeSpeed={120}
+              deleteSpeed={40}
+              delaySpeed={4000}
+            />
+            <span className={classes.span}>2k22</span>
+          </Typography>
+          <p
+            style={{ fontWeight: 400, marginTop: '2vw' }}
+            className={classes.subText}
+          >
+            Seth Jai Parkash Mukand Lal Institute of Engineering and Technology,
+            Radaur
+          </p>
+        </div>
+      ) : null}
+      {show ? <div className={classes.gradient}></div> : null}
       <div className={classes.carousel}>
         <Carousel
           indicators={false}
