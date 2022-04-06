@@ -44,14 +44,14 @@ const useStyles = makeStyles(() => ({
     fontWeight: '500',
   },
   content: {
-    width: '60%',
+    width: '80%',
     padding: '2rem',
     marginTop: '1rem',
     display: ' flex',
     alignItems: 'center',
     justifyContent: 'center',
     ['@media (max-width:780px)']: {
-      width: '80%',
+      width: '90%',
     },
   },
   RegisterationHeading: {
@@ -71,96 +71,184 @@ function Schedule() {
     {
       name: 'Solo Dance',
       venue: 'Auditorium',
-      date: '12 March 10.30 AM',
+      date: '8 April 10.00 AM - 10:30 AM',
+      data: [
+        'Duet Singing - Main Stage',
+        'Musical Chairs - Plaza',
+        'Fiction Addiction - ICT Lab',
+        'Graffiti',
+      ],
     },
     {
       name: 'Duet Dance',
       venue: 'Auditorium',
-      date: '12 March 11.00 AM',
+      date: '8 April 10:30 AM - 11:00 AM',
+      data: [
+        'Group Singing - Main Stage',
+        'Musical Chairs - Plaza',
+        'Fiction Addiction - ICT Lab',
+        'Graffiti',
+      ],
     },
     {
       name: 'Group Folk Dance',
       venue: 'Auditorium',
-      date: '12 March 11.30 AM',
+      date: '8 April 11:00 AM - 11:20 AM',
+      data: ['Ad Mad Show - Main Stage', 'Stand Up Comedy - Plaza'],
     },
     {
       name: 'Group Western',
       venue: 'Auditorium',
-      date: '12 March 12.30 PM',
+      date: '8 April 11:20 AM - 12:20 AM',
+      data: ['Solo Dance - Main Stage', 'Turn Coat - Plaza', 'Mehandi'],
     },
     {
       name: 'Choreography',
       venue: 'Auditorium',
-      date: '12 March 2.30 PM',
+      date: '8 April 12:20 AM - 1:00 AM',
+      data: [
+        'Skit - Main Stage',
+        'Face Off - Plaza',
+        'Eco Meme War - ICT LAB',
+        'Brushless Painting',
+      ],
     },
     {
       name: 'Solo Singing Hindi',
       venue: 'PD 202 First Floor',
-      date: '12 March 10.30 AM – 11.30 AM',
+      date: '8 April 2:45 AM - 3:45 AM',
+      data: [
+        'DJ Slot - Plaza',
+        'E-sports - ICT LAB',
+        'Mandala Art - Mechanical Corridor',
+      ],
     },
     {
       name: 'Duet Singing',
       venue: 'PD 202 First Floor',
-      date: '12 March 11.30 Am – 12.00PM',
+      date: '8 April 3:45 AM- 4:30 AM',
+      data: ['Shot Film Making- ICT LAB', 'Jump The Ball - Informal Pandal'],
     },
     {
       name: 'Group Singing',
       venue: 'PD 202 First Floor',
-      date: '12 March 12.00PM – 1.00 PM',
+      date: '8 April 4:30 AM - 5:15 AM',
+      data: ['Meme/Mono Acting - Main Stage', 'Bottle Decoration'],
     },
     {
       name: 'Instrumental',
       venue: 'PD 202 First Floor',
-      date: '12 March 2.00PM -2.30 PM',
+      date: '8 April 5:15 AM - 5:45 AM',
+      data: ['Choreography - Main Stage'],
     },
     {
       name: 'Ragini',
       venue: 'PD 202 First Floor',
-      date: '12 March 2.30PM – 3.00PM',
+      date: '8 April 5:45 AM - 6:30 AM',
+      data: ['Live Singing - Main Stage'],
     },
     {
       name: 'Fash P',
       venue: 'Auditorium',
-      date: '12 March 11.30 AM – 12.30 PM',
+      date: '8 April 6:30 AM - 7:00 AM',
+      data: ['Fash P - Main Stage'],
     },
     {
       name: 'Stage Play',
       venue: 'Blood Donation Hall',
-      date: '12 March 10.30 AM',
+      date: '8 April 7:00 AM - 7:30 AM',
+      data: ['Group Western - Main Stage'],
     },
     {
       name: 'Ad Mad Show',
       venue: 'Blood Donation Hall',
-      date: '12 March 11.30 AM',
+      date: '8 April 7:30 AM - 8:30 AM',
+      data: ['Folk Dance - Main Stage'],
     },
     {
-      name: 'Mono Acting',
-      venue: 'Blood Donation Hall',
-      date: '12 March 12.30 PM',
+      name: 'Solo Dance',
+      venue: 'Auditorium',
+      date: '9 April 11.00 AM - 11:40 AM',
+      data: [
+        'Solo Singing - Main Stage',
+        'Musical Chairs - Plaza',
+        'Vreating Writing - ICT Lab',
+        'Cross The Maze - Main Ground',
+        'Tatto Making - Mechanical Corridor',
+      ],
     },
     {
-      name: 'Mime',
-      venue: 'Blood Donation Hall',
-      date: '12 March 2.00 PM',
+      name: 'Duet Dance',
+      venue: 'Auditorium',
+      date: '9 April 11:40 AM - 12:00 AM',
+      data: [
+        'Instrumental - Main Stage',
+        'Footloose - Plaza',
+        'Treasure Hunt - Main Ground',
+      ],
+    },
+    {
+      name: 'Group Folk Dance',
+      venue: 'Auditorium',
+      date: '9 April 12:00 AM - 1:00 AM',
+      data: [
+        'Stage Play - Main Stage',
+        'DJ Slot - Plaza',
+        'RAP War - Main Ground',
+        'Alfaz - ICT lab',
+        'Paint Your Emotion - ME Corridor',
+      ],
+    },
+    {
+      name: 'Group Western',
+      venue: 'Auditorium',
+      date: '9 April 2:30 AM - 3:15 AM',
+      data: [
+        'Duet Dance - Main Stage',
+        'JAM - Plaza',
+        'Cooking without Gas - Informal Pandal',
+        'Doodling - Mechanical Corridor',
+      ],
+    },
+    {
+      name: 'Duet Singing',
+      venue: 'PD 202 First Floor',
+      date: '9 April 3:15 AM- 4:00 AM',
+      data: ['Price Distribution - Main Stage', 'Flash Mob - Main Ground'],
+    },
+    {
+      name: 'Group Singing',
+      venue: 'PD 202 First Floor',
+      date: '9 April 4:00 AM - 5:00 AM',
+      data: ['DJ Slot - Plaza'],
     },
   ];
 
   return (
     <div className={classes.root}>
       <Typography variant="h3" className={classes.RegisterationHeading}>
-        Audition Schedule
+        Schedule of Enchante 2k22
       </Typography>
       <div className={classes.content}>
-        <Stepper orientation="vertical">
+        <Stepper
+          orientation="vertical"
+          style={{
+            width: '50%',
+          }}
+        >
           {steps.map((step, index) => (
             <Step active={true} key={step.label}>
               <StepLabel>
                 <Typography style={{ fontWeight: 700 }} variant="h6">
-                  {step.name}
+                  {step.date}
                 </Typography>
               </StepLabel>
               <StepContent>
-                <Typography>{`At ${step.venue} on ${step.date}`}</Typography>
+                <ul style={{ listStyle: 'none' }}>
+                  {step.data.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               </StepContent>
             </Step>
           ))}
