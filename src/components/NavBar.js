@@ -126,9 +126,9 @@ function NavBar() {
                   curr === 3 ? classes.navLinkActive : classes.navLink
                 }`}
                 style={{ textDecoration: 'none' }}
-                to="/register"
+                to="/gallary"
               >
-                Register
+                Gallary
               </Link>
             </Nav.Link>
             <Nav.Link

@@ -15,6 +15,13 @@ import i3 from './../assets/rules/3.png';
 import i4 from './../assets/rules/4.png';
 import i5 from './../assets/rules/5.png';
 import i6 from './../assets/rules/6.png';
+import i7 from './../assets/rules/7.png';
+import i8 from './../assets/rules/8.png';
+import i9 from './../assets/rules/9.png';
+import i10 from './../assets/rules/10.png';
+import i11 from './../assets/rules/11.png';
+import i12 from './../assets/rules/12.png';
+import i13 from './../assets/rules/13.png';
 
 const data = [
   {
@@ -112,9 +119,9 @@ function Register() {
   return (
     <div className={classes.root}>
       <Typography variant="h3" className={classes.RegisterationHeading}>
-        Register
+        Gallary
       </Typography>
-      <p className={classes.subText}>
+      {/* <p className={classes.subText}>
         * Please register with your college email IDs
       </p>
       <Card className={classes.content}>
@@ -140,46 +147,17 @@ function Register() {
             </li>
           ))}
         </ul>
-      </Card>
-      <Typography variant="h3" className={classes.RegisterationHeading}>
-        Rules
-      </Typography>
+      </Card> */}
       <div className={classes.carousel}>
         <Carousel
           indicators={false}
-          // prevIcon={false}
-          // nextIcon={false}
           indicatorLabels={false}
           interval={3500}
-          style={{ height: '60vh' }}
+          style={{ height: '65vh', width: '45%', overflow: 'auto' }}
         >
           <Carousel.Item>
             <img
-              style={{ width: '100%', height: '60vh' }}
-              className="w-100"
-              src={i5}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{ width: '100%', height: '60vh' }}
-              className="w-100"
-              src={i3}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{ width: '100%', height: '60vh' }}
-              className="w-100"
-              src={i1}
-              alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{ width: '100%', height: '60vh' }}
+              style={{ width: '100%', height: '65vh' }}
               className="d-block w-100"
               src={i4}
               alt="Third slide"
@@ -187,9 +165,89 @@ function Register() {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              style={{ width: '100%', height: '60vh' }}
+              style={{ width: '100%', height: '65vh' }}
+              className="d-block w-100"
+              src={i9}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="d-block w-100"
+              src={i10}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="d-block w-100"
+              src={i11}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="d-block w-100"
+              src={i12}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="w-100"
+              src={i13}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="d-block w-100"
+              src={i8}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="w-100"
+              src={i5}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="w-100"
+              src={i3}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="w-100"
+              src={i1}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
               className="w-100"
               src={i6}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              style={{ width: '100%', height: '65vh' }}
+              className="w-100"
+              src={i7}
               alt="Third slide"
             />
           </Carousel.Item>

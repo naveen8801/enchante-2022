@@ -54,7 +54,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/contact" element={<ContactUs />} />
             <Route exact path="/notice" element={<Notice />} />
-            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/gallary" element={<Register />} />
             <Route exact path="/schedule" element={<Schedule />} />
             {user ? (
               <Route exact path="/admin-dashboard" element={<Admin />} />
