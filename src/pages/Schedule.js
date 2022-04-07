@@ -84,7 +84,7 @@ function Schedule() {
       venue: 'Auditorium',
       date: '8 April 10:30 AM - 11:00 AM',
       data: [
-        'Group Singing - Main Stage',
+        'Add Mad Show - Main Stage',
         'Musical Chairs - Plaza',
         'Fiction Addiction - ICT Lab',
         'Graffiti',
@@ -93,19 +93,19 @@ function Schedule() {
     {
       name: 'Group Folk Dance',
       venue: 'Auditorium',
-      date: '8 April 11:00 AM - 11:20 AM',
-      data: ['Ad Mad Show - Main Stage', 'Stand Up Comedy - Plaza'],
+      date: '8 April 11:00 AM - 11:30 AM',
+      data: ['Group Singing - Main Stage', 'Stand Up Comedy - Plaza'],
     },
     {
       name: 'Group Western',
       venue: 'Auditorium',
-      date: '8 April 11:20 AM - 12:20 AM',
+      date: '8 April 11:30 AM - 12:30 PM',
       data: ['Solo Dance - Main Stage', 'Turn Coat - Plaza', 'Mehandi'],
     },
     {
       name: 'Choreography',
       venue: 'Auditorium',
-      date: '8 April 12:20 AM - 1:00 AM',
+      date: '8 April 12:30 PM - 1:15 PM',
       data: [
         'Skit - Main Stage',
         'Face Off - Plaza',
@@ -116,53 +116,49 @@ function Schedule() {
     {
       name: 'Solo Singing Hindi',
       venue: 'PD 202 First Floor',
-      date: '8 April 2:45 AM - 3:45 AM',
-      data: [
-        'DJ Slot - Plaza',
-        'E-sports - ICT LAB',
-        'Mandala Art - Mechanical Corridor',
-      ],
+      date: '8 April 1:15 PM - 2:00 PM',
+      data: ['Meme/Mono Acting - Main Stage', 'E-sports - ICT LAB'],
     },
     {
       name: 'Duet Singing',
       venue: 'PD 202 First Floor',
-      date: '8 April 3:45 AM- 4:30 AM',
-      data: ['Shot Film Making- ICT LAB', 'Jump The Ball - Informal Pandal'],
+      date: '8 April 2:45 PM- 3:45 PM',
+      data: ['Mandala Art - Mech. Corridor'],
     },
     {
       name: 'Group Singing',
       venue: 'PD 202 First Floor',
-      date: '8 April 4:30 AM - 5:15 AM',
-      data: ['Meme/Mono Acting - Main Stage', 'Bottle Decoration'],
+      date: '8 April 3:45 PM - 4:30 PM',
+      data: ['Short Film Making - ICT-LAB', 'Jump The ball - Informal Pandal'],
     },
     {
       name: 'Instrumental',
       venue: 'PD 202 First Floor',
-      date: '8 April 5:15 AM - 5:45 AM',
+      date: '8 April 4:30 PM - 5:15 PM',
       data: ['Choreography - Main Stage'],
     },
     {
       name: 'Ragini',
       venue: 'PD 202 First Floor',
-      date: '8 April 5:45 AM - 6:30 AM',
+      date: '8 April 5:15 PM - 5:45 PM',
+      data: ['Group Western - Main Stage'],
+    },
+    {
+      name: 'Ragini',
+      venue: 'PD 202 First Floor',
+      date: '8 April 5:45 PM - 6:30 PM',
       data: ['Live Singing - Main Stage'],
     },
     {
       name: 'Fash P',
       venue: 'Auditorium',
-      date: '8 April 6:30 AM - 7:00 AM',
+      date: '8 April 6:30 PM - 7:00 PM',
       data: ['Fash P - Main Stage'],
     },
     {
       name: 'Stage Play',
       venue: 'Blood Donation Hall',
-      date: '8 April 7:00 AM - 7:30 AM',
-      data: ['Group Western - Main Stage'],
-    },
-    {
-      name: 'Ad Mad Show',
-      venue: 'Blood Donation Hall',
-      date: '8 April 7:30 AM - 8:30 AM',
+      date: '8 April 7:00 PM - 8:00 PM',
       data: ['Folk Dance - Main Stage'],
     },
     {
@@ -171,8 +167,7 @@ function Schedule() {
       date: '9 April 11.00 AM - 11:40 AM',
       data: [
         'Solo Singing - Main Stage',
-        'Musical Chairs - Plaza',
-        'Vreating Writing - ICT Lab',
+        'Creating Writing - ICT Lab',
         'Cross The Maze - Main Ground',
         'Tatto Making - Mechanical Corridor',
       ],
@@ -190,10 +185,9 @@ function Schedule() {
     {
       name: 'Group Folk Dance',
       venue: 'Auditorium',
-      date: '9 April 12:00 AM - 1:00 AM',
+      date: '9 April 12:00 PM - 1:00 PM',
       data: [
         'Stage Play - Main Stage',
-        'DJ Slot - Plaza',
         'RAP War - Main Ground',
         'Alfaz - ICT lab',
         'Paint Your Emotion - ME Corridor',
@@ -202,7 +196,7 @@ function Schedule() {
     {
       name: 'Group Western',
       venue: 'Auditorium',
-      date: '9 April 2:30 AM - 3:15 AM',
+      date: '9 April 2:30 PM - 3:15 PM',
       data: [
         'Duet Dance - Main Stage',
         'JAM - Plaza',
@@ -215,12 +209,6 @@ function Schedule() {
       venue: 'PD 202 First Floor',
       date: '9 April 3:15 AM- 4:00 AM',
       data: ['Price Distribution - Main Stage', 'Flash Mob - Main Ground'],
-    },
-    {
-      name: 'Group Singing',
-      venue: 'PD 202 First Floor',
-      date: '9 April 4:00 AM - 5:00 AM',
-      data: ['DJ Slot - Plaza'],
     },
   ];
 
